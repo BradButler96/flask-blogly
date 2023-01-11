@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Users {% endblock %}
+
+{% block content %}
+
+<div>   
+    <img src="{{ user.profile_pic }}" alt="">
+</div>   
+
+<div>
+    <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+</div>
+<br>
+<div>
+    <form action="/{{ user.id }}/edit" style="display: inline">
+        <button class="btn btn-warning">Edit</button>
+    </form>
+    <form action="/{{ user.id }}/delete" style="display: inline">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    <form action="/" style="display: inline">
+        <button class="btn btn-primary">Go Back</button>
+    </form>
+</div>   
+
+{% endblock %}
