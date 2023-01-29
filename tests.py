@@ -29,8 +29,6 @@ class UserModelTestCase(TestCase):
         db.session.rollback()
 
     def test_def_pfp(self):
-        print('*************************************************************************')
-
         user = User(first_name='First', last_name='Last')
         db.session.add(user)
         db.session.commit()
@@ -51,9 +49,6 @@ class TagsModelTestCase(TestCase):
         db.session.rollback()
 
     def test_unique_tags(self):
-        print('*************************************************************************')
-        print('*************************************************************************')
-
         tag1 = Tags(name='Tag')
         tag2 = Tags(name='Tag')
         db.session.add_all([tag1, tag2])
@@ -118,10 +113,6 @@ class HomepageTestCase(TestCase):
         db.session.rollback()
 
     def test_homepage(self):
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-
         with app.test_client() as client:
             resp = client.get("/")
             html = resp.get_data(as_text=True)
@@ -159,11 +150,6 @@ class EditTagTestCase(TestCase):
         db.session.rollback()
 
     def test_submit_edit_tag(self):
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-
         """Create tags to edit"""
         tag = Tags(name='Edit_Me')
         db.session.add(tag)
@@ -206,12 +192,6 @@ class EditPostTestCase(TestCase):
         db.session.rollback()
 
     def test_submit_edit_post(self):
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-
         """Create user to make post"""
         user = User(first_name='First', last_name='Last')
         db.session.add(user)
@@ -260,13 +240,6 @@ class EditUserTestCase(TestCase):
         db.session.rollback()
 
     def test_submit_edit_user(self):
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-        print('*************************************************************************')
-
         """Create user to make post"""
         user = User(first_name='First', last_name='Last')
         db.session.add(user)
